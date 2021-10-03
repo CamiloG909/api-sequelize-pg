@@ -18,10 +18,10 @@ projectsController.createProject = async (req, res) => {
         name,
         priority,
         description,
-        deliverydate,
+        delivery_date: deliverydate,
       },
       {
-        fields: ["name", "priority", "description", "deliverydate"],
+        fields: ["name", "priority", "description", "delivery_date"],
       }
     );
 
@@ -64,7 +64,7 @@ projectsController.editProject = async (req, res) => {
   const { name, priority, description, deliverydate } = req.body;
 
   const project = await Project.findAll({
-    attributes: ["id", "name", "priority", "description", "deliverydate"],
+    attributes: ["id", "name", "priority", "description", "delivery_date"],
     where: {
       id: req.params.id,
     },
@@ -76,7 +76,17 @@ projectsController.editProject = async (req, res) => {
         name,
         priority,
         description,
-        deliverydate,
+        delivery_date: deliverydate,
+      });
+    });
+  }
+  if (project.length > 0) {
+    project.forEach(async (e) => {
+      await e.update({
+        name,
+        priority,
+        description,
+        delivery_date: deliverydate,
       });
     });
   }

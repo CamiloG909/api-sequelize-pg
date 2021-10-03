@@ -19,7 +19,7 @@ const Project = sequelize.define(
     description: {
       type: Sequelize.TEXT,
     },
-    deliverydate: {
+    delivery_date: {
       type: Sequelize.DATE,
     },
   },

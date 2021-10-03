@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS projects(
 	name text not null check (name <> ''),
 	priority integer not null,
 	description text,
-	deliverydate date not null
+	delivery_date date not null
 );
 
 CREATE Table if not exists tasks(
@@ -14,7 +14,7 @@ CREATE Table if not exists tasks(
 );
 
 -- Insert projects
-insert into projects(name, priority, description, deliverydate) values 
+insert into projects(name, priority, description, delivery_date) values 
 ('Make a web app', 1, 'Using JavaScript', '2021-05-12'),
 ('Make an app', 2, 'Using dart', '2021-12-21'),
 ('Make an desktop app', 2, 'Using c++', '2021-12-15')
