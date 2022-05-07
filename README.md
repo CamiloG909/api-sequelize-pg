@@ -1,1 +1,3 @@
-# Api sequelize pg
+# REST API with Sequelize and PostgreSQL
+
+Deploy✨ 
